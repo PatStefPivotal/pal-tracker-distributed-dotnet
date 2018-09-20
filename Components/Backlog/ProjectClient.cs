@@ -8,7 +8,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Backlog
 {
-   public class ProjectClient : IProjectClient
+    public class ProjectClient : IProjectClient
     {
         private readonly HttpClient _client;
         private readonly ILogger<ProjectClient> _logger;
@@ -28,7 +28,7 @@ namespace Backlog
         private async Task<ProjectInfo> DoGet(long projectId)
         {
             var token = await _accessTokenFn();
-            
+
             _client.DefaultRequestHeaders.Accept.Clear();
             _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
